@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color: black;">Edit your sneaker</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card color="dark">
+    <ion-card-header>
+      <ion-card-subtitle>{{note.createdAt | date: 'short'}}</ion-card-subtitle>
+      <ion-card-title>{{note.title}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p text-align="justify">{{note.content}}</p>
+      <br>
+      <ion-thumbnail slot="start" style="width: 200px; height:200px; margin-left: 16%;">
+        <img src="{{note.ft}}">
+      </ion-thumbnail>
+      <br>
+      <ion-button slot="start" color="success" [routerLink]="'/update-note/' + note.id">Edit</ion-button>
+      <ion-button slot="end" color="secondary" (click)="deleteNote()">Delete</ion-button>
+
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

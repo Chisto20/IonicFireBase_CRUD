@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-title style="color: black;">
+      World of Sneakers 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Your Sneakers</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let note of (notes | async)">
+      <ion-thumbnail slot="start" style="width: 70px; height:70px;">
+        <img src="{{note.ft}}">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{note.title}}</h2>
+        <p>{{note.content}}</p>
+      </ion-label>
+      <ion-button color="secondary" fill="outline" slot="end" [routerLink]="'/view-note/'+note.id">Details</ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="dark" [routerLink]="'/add-note'">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
+<ion-footer >
+  <ion-toolbar color="medium" style="text-align: center;">
+    <ion-title ><a href="https://github.com/Chisto20/Ionic-Crud" style="color: black;">Git Hub</a></ion-title>
+  </ion-toolbar>
+</ion-footer>

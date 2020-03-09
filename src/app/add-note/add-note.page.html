@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color: black;">New Sneaker</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-item>
+    <ion-input placeholder="Sneaker Name" [(ngModel)]="note.title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-textarea rows="6" [(ngModel)]="note.content" placeholder="About your new sneaker..."></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="New sneaker photo" [(ngModel)]="note.ft"></ion-input>
+  </ion-item>
+</ion-list>
+  <ion-button color="medium" expand="full" (click)="addNote()" style="color: black;">Create</ion-button>
+</ion-content>
